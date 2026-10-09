@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iStore Helper</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+
+<header class="hero animate__animated animate__fadeInDown">
+
+    <div class="logo">
+        <img src="assets/images/istore.png" alt="iStore Logo">
+    </div>
+
+    <h1>iStore Helper</h1>
+
+    <p>Gateway Sales Dashboard</p>
+
+</header>
+
+<div class="container">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search tools..."
+    >
+
+    <h2>Customer QR Codes</h2>
+
+    <div class="grid">
+
+        <div class="card qr-card"
+             data-url="https://bookings.istore.co.za/#/istoregateway"
+             data-title="Tech Appointment">
+
+            🔧
+            <h3>Tech Appointment</h3>
+            <p>Show QR Code</p>
+
+        </div>
+
+        <div class="card qr-card"
+             data-url="https://istoreinsure.co.za/"
+             data-title="iStore Insure">
+
+            🛡️
+            <h3>iStore Insure</h3>
+            <p>Show QR Code</p>
+
+        </div>
+
+    </div>
+
+    <h2>Quick Tools</h2>
+
+    <div class="grid">
+
+        <a class="card" target="_blank" href="https://www.istore.co.za/">
+            🌐
+            <h3>iStore Website</h3>
+        </a>
+
+        <a class="card" target="_blank" href="https://www.istore.co.za/iphone-compare">
+            📱
+            <h3>Compare iPhones</h3>
+        </a>
+
+        <a class="card" target="_blank" href="https://istore.portal.tradein.co.za/app/main/tradein">
+            ♻️
+            <h3>Trade-In Portal</h3>
+        </a>
+
+        <a class="card" target="_blank" href="https://www.istore.co.za/trade-in-cash-back">
+            💰
+            <h3>Trade-In Cashback</h3>
+        </a>
+
+        <a class="card" target="_blank" href="https://cg-team-portal-prod.azurewebsites.net/account/login">
+            👥
+            <h3>Core Group Portal</h3>
+        </a>
+
+        <a class="card" target="_blank" href="https://salescoach.apple.com/home/explore">
+            🍎
+            <h3>Apple Sales Coach</h3>
+        </a>
+
+    </div>
+
+</div>
+
+<div id="modal">
+
+    <div class="modal-content">
+
+        <button id="close">&times;</button>
+
+        <h2 id="qrTitle"></h2>
+
+        <div id="qrcode"></div>
+
+        <p>Scan this QR code with your phone.</p>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --background:#eef2f7;
+
+    --card:rgba(255,255,255,.72);
+
+    --text:#1d1d1f;
+
+    --secondary:#6e6e73;
+
+    --blue:#0071e3;
+
+    --shadow:
+        0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/* ---------- Body ---------- */
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #f9fafb,
+        #eef2f7
+    );
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+/* ---------- Header ---------- */
+
+header{
+
+    padding:60px 25px;
+
+    text-align:center;
+
+}
+
+header h1{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+header p{
+
+    margin-top:12px;
+
+    color:var(--secondary);
+
+    font-size:1.1rem;
+
+}
+
+/* ---------- Container ---------- */
+
+.container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding-bottom:80px;
+
+}
+
+/* ---------- Search ---------- */
+
+input{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    font-size:16px;
+
+    margin-bottom:40px;
+
+    transition:.3s;
+
+}
+
+input:focus{
+
+    box-shadow:
+        0 0 0 4px rgba(0,113,227,.15);
+
+}
+
+/* ---------- Headings ---------- */
+
+h2{
+
+    margin:35px 0 20px;
+
+    font-size:1.6rem;
+
+}
+
+/* ---------- Grid ---------- */
+
+.grid{
+
+    display:grid;
+
+    gap:25px;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.card h3{
+
+    margin-top:18px;
+
+    font-size:1.2rem;
+
+}
+
+.card p{
+
+    margin-top:12px;
+
+    color:var(--secondary);
+
+}
+
+/* ---------- Modal ---------- */
+
+#modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    backdrop-filter:blur(6px);
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:90%;
+
+    max-width:420px;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    text-align:center;
+
+    animation:pop .35s ease;
+
+    position:relative;
+
+}
+
+#close{
+
+    position:absolute;
+
+    right:20px;
+
+    top:15px;
+
+    border:none;
+
+    background:none;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+}
+
+#qrcode{
+
+    margin:30px auto;
+
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes pop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1);
+
+    }
+
+}
+
+.card{
+
+    animation:slide .6s forwards;
+
+}
+
+@keyframes slide{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:2.2rem;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
