@@ -712,3 +712,50 @@ tr:hover{
         padding:8px;
     }
 }
+/* Quick Action Card */
+
+.quick-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    background:#1b1b1b;
+    color:white;
+
+    text-decoration:none;
+
+    border-left:5px solid #00ff88;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin:15px auto;
+
+    max-width:650px;
+
+    transition:.3s;
+
+    box-shadow:0 0 15px rgba(0,255,136,.15);
+}
+
+.quick-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(0,255,136,.4);
+}
+
+.quick-card .icon{
+    font-size:42px;
+}
+
+.quick-card h3{
+    margin:0;
+    color:#00ff88;
+    font-size:22px;
+}
+
+.quick-card p{
+    margin:5px 0 0;
+    color:#bfbfbf;
+    font-size:15px;
+}
