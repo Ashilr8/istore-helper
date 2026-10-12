@@ -370,3 +370,45 @@ a.card{
 }
 
 }
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+th{
+
+background:#0071e3;
+
+color:white;
+
+padding:15px;
+
+}
+
+td{
+
+padding:15px;
+
+border-bottom:1px solid #eee;
+
+}
+
+tr:hover{
+
+background:#f5f5f5;
+
+cursor:pointer;
+
+}
