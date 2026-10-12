@@ -1,34 +1,136 @@
-const search = document.getElementById("search");
+// ===============================
+// Apple SKU Lookup
+// ===============================
 
-search.addEventListener("keyup", function () {
+const productsContainer = document.getElementById("products");
+const searchInput = document.getElementById("search");
+const modelFilter = document.getElementById("modelFilter");
+const storageFilter = document.getElementById("storageFilter");
+const count = document.getElementById("count");
 
-    const value = this.value.toLowerCase();
+// Populate dropdowns
+function populateFilters() {
 
-    const rows = document.querySelectorAll("#skuTable tbody tr");
+    const models = [...new Set(phones.map(p => p.model))];
+    const storage = [...new Set(phones.map(p => p.storage))];
 
-    rows.forEach(row => {
+    models.sort().forEach(model => {
+        const option = document.createElement("option");
+        option.value = model;
+        option.textContent = model;
+        modelFilter.appendChild(option);
+    });
 
-        row.style.display =
-            row.innerText.toLowerCase().includes(value)
-                ? ""
-                : "none";
+    storage.sort().forEach(size => {
+        const option = document.createElement("option");
+        option.value = size;
+        option.textContent = size;
+        storageFilter.appendChild(option);
+    });
+
+}
+
+// Build Cards
+function displayProducts(list) {
+
+    productsContainer.innerHTML = "";
+
+    count.textContent = `${list.length} Products Found`;
+
+    list.forEach(phone => {
+
+        const card = document.createElement("div");
+
+        card.className = "phone";
+
+        card.innerHTML = `
+
+            <h3>${phone.model}</h3>
+
+            <p><strong>Colour:</strong> ${phone.colour}</p>
+
+            <p><strong>Storage:</strong> ${phone.storage}</p>
+
+            <p class="sku">${phone.sku}</p>
+
+            <button class="copy">
+                Copy SKU
+            </button>
+
+        `;
+
+        card.querySelector(".copy").addEventListener("click", () => {
+
+            navigator.clipboard.writeText(phone.sku);
+
+            const button = card.querySelector(".copy");
+
+            button.innerText = "Copied ✓";
+
+            setTimeout(() => {
+
+                button.innerText = "Copy SKU";
+
+            }, 1500);
+
+        });
+
+        productsContainer.appendChild(card);
 
     });
 
-});
+}
 
-// Click to copy SKU
+// Search + Filters
+function filterProducts() {
 
-document.querySelectorAll("#skuTable tbody tr").forEach(row => {
+    const search = searchInput.value.toLowerCase();
 
-    row.addEventListener("click", () => {
+    const model = modelFilter.value;
 
-        const sku = row.cells[3].innerText;
+    const storage = storageFilter.value;
 
-        navigator.clipboard.writeText(sku);
+    const filtered = phones.filter(phone => {
 
-        alert("Copied: " + sku);
+        const matchesSearch =
+
+            phone.model.toLowerCase().includes(search) ||
+
+            phone.colour.toLowerCase().includes(search) ||
+
+            phone.storage.toLowerCase().includes(search) ||
+
+            phone.sku.toLowerCase().includes(search);
+
+        const matchesModel =
+
+            model === "" ||
+
+            phone.model === model;
+
+        const matchesStorage =
+
+            storage === "" ||
+
+            phone.storage === storage;
+
+        return matchesSearch &&
+            matchesModel &&
+            matchesStorage;
 
     });
 
-});
+    displayProducts(filtered);
+
+}
+
+searchInput.addEventListener("input", filterProducts);
+
+modelFilter.addEventListener("change", filterProducts);
+
+storageFilter.addEventListener("change", filterProducts);
+
+// Start
+populateFilters();
+
+displayProducts(phones);
