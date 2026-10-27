@@ -728,7 +728,7 @@ const phones = [
         colour: "Silver",
         storage: "2TB",
         sku: "MJY34AF/A"
-    }
+    },
 
     // =========================
 // IPHONE DUO SKU
