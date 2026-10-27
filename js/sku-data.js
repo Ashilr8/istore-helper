@@ -788,6 +788,6 @@ const phones = [
         colour: "Night Sky",
         storage: "2TB",
         sku: "MK2L4AF/A"
-    },
+    }
 
 ];
