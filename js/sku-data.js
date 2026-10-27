@@ -730,4 +730,64 @@ const phones = [
         sku: "MJY34AF/A"
     }
 
+    // =========================
+// IPHONE DUO SKU
+// =========================
+
+    {
+        model: "iPhone Duo",
+        colour: "Star White",
+        storage: "256GB",
+        sku: "MK2D4AF/A"
+    },
+
+    {
+        model: "iPhone Duo",
+        colour: "Star White",
+        storage: "512GB",
+        sku: "MK2F4AF/A"
+    },
+
+    {
+        model: "iPhone Duo",
+        colour: "Star White",
+        storage: "1TB",
+        sku: "MK2H4AF/A"
+    },
+
+    {
+        model: "iPhone Duo",
+        colour: "Star White",
+        storage: "2TB",
+        sku: "MK2K4AF/A"
+    },
+
+    {
+        model: "iPhone Duo",
+        colour: "Night Sky",
+        storage: "256GB",
+        sku: "MK2E4AF/A"
+    },
+
+    {
+        model: "iPhone Duo",
+        colour: "Night Sky",
+        storage: "512GB",
+        sku: "MK2G4AF/A"
+    },
+
+    {
+        model: "iPhone Duo",
+        colour: "Night Sky",
+        storage: "1TB",
+        sku: "MK2J4AF/A"
+    },
+
+    {
+        model: "iPhone Duo",
+        colour: "Night Sky",
+        storage: "2TB",
+        sku: "MK2L4AF/A"
+    },
+
 ];
